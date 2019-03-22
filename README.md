@@ -4,7 +4,14 @@
 ## 1.00
 The current version of this repository is **V1.00**. At the moment the repository holds no *intelligent* Agent and is merely a shell of the Game **Go**. 
 
-If you are to run: 
+## Running
+To run this project simply do the follow:
+
+You will first have to generate **hashes** which will keep track of all game_states. Otherwise (given the nature of Go) we will utilize too much memory. To do so simply run this commad first:
+```
+$ python generate_hashes.py > ./dlgo/zobrist.py
+```
+Now that you have hashes generated simply run the bot with the following command:
 ```
 $ python bot_v_bot.py
 ```
