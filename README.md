@@ -30,25 +30,27 @@ To copy into your working directy. Then simply run ```$ python bot_v_bot.py```
 ```
 ├── README.md
 ├── bot_v_bot.py
-└── dlgo
-    ├── __init__.py
-    ├── __pycache__
-    │   ├── __init__.cpython-36.pyc
-    │   ├── goboard.cpython-36.pyc
-    │   ├── gotypes.cpython-36.pyc
-    │   └── utils.cpython-36.pyc
-    ├── agent
-    │   ├── __init__.py
-    │   ├── __pycache__
-    │   │   ├── __init__.cpython-36.pyc
-    │   │   ├── base.cpython-36.pyc
-    │   │   ├── helpers.cpython-36.pyc
-    │   │   └── naive.cpython-36.pyc
-    │   ├── base.py
-    │   ├── helpers.py
-    │   └── naive.py
-    ├── goboard.py
-    ├── goboard_slow.py
-    ├── gotypes.py
-    └── utils.py
+├── dlgo
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-36.pyc
+│   │   ├── goboard.cpython-36.pyc
+│   │   ├── gotypes.cpython-36.pyc
+│   │   └── utils.cpython-36.pyc
+│   ├── agent
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-36.pyc
+│   │   │   ├── base.cpython-36.pyc
+│   │   │   ├── helpers.cpython-36.pyc
+│   │   │   └── naive.cpython-36.pyc
+│   │   ├── base.py
+│   │   ├── helpers.py
+│   │   └── naive.py
+│   ├── goboard.py
+│   ├── goboard_slow.py
+│   ├── gotypes.py
+│   ├── utils.py
+│   └── zobrist.py
+└── generate_hashes.py
 ```
