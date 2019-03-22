@@ -1,4 +1,3 @@
-import numpy as np
 import copy
 from dlgo.gotypes import Player
 
@@ -90,7 +89,6 @@ class Board():
     liberties = []
 
     for neighbor in point.neighbors(): # grabbing all neighbors for that point
-    """Examining direct neighbors of this point"""
 
       if not self.is_on_grid(neighbor):
         # neighbor isn't on the grid = continue (check the next neighbor)
@@ -128,21 +126,21 @@ class Board():
       if other_color_string.num_liberties == 0:
         self._remove_string(other_color_string)
 
-    def _remove_string(self, string):
-      for point in string.stones:
-        for neighbor in point.neighbors():
-          """Removing a string can create liberties for other strings"""
-          neighbor_string = self._grid.get(neighbor)
-          if neighbor_string is None:
-            continue
-          if neighbor_string is not string:
-            neighbor_string.add_liberty(point)
-        self._grid[point] = None
+  def _remove_string(self, string):
+    for point in string.stones:
+      for neighbor in point.neighbors():
+        """Removing a string can create liberties for other strings"""
+        neighbor_string = self._grid.get(neighbor)
+        if neighbor_string is None:
+          continue
+        if neighbor_string is not string:
+          neighbor_string.add_liberty(point)
+      self._grid[point] = None
 
   def is_on_grid(self, point):
     """Checking if point is on the board"""
     return 1 <= point.row <= self.num_rows and \
-    1 <= point.col <= self.num_cols
+            1 <= point.col <= self.num_cols
           
   def get(self, point):
     """Returns the content of a point on the board: a Player if a stone is on taht point, or else None"""
@@ -197,9 +195,9 @@ class GameState():
   @classmethod
   def new_game(cls, board_size):
     if isinstance(board_size, int):
-      board_size = (board_size, board_size)
-      board = Board(*board_size)
-      return GameState(board, player.black, None, None)
+        board_size = (board_size, board_size)
+    board = Board(*board_size)
+    return GameState(board, Player.black, None, None)
 
   @property
   def situation(self):
@@ -223,4 +221,7 @@ class GameState():
       return False
     if move.is_pass or move.is_resign:
       return True
-    return (self.board.get(move.point) is None and not self.is_move_self_capture(self.next_player, move) and not self.does_move_violate_ko(self.next_player, move))
+    return (
+            self.board.get(move.point) is None and
+            not self.is_move_self_capture(self.next_player, move) and
+            not self.does_move_violate_ko(self.next_player, move))
