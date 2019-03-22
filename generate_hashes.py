@@ -25,7 +25,7 @@ for row in range(1,20):
       code = random.randint(0, MAX63) # generates hash
       table[Point(row,col), state] = code # stores hash in dictionary
 
-print('from .gotypes import Player, Point')
+print('from dlgo.gotypes import Player, Point')
 print('')
 print("__all__ = ['HASH_CODE', 'EMPTY_BOARD']")
 print('')
